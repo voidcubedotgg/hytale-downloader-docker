@@ -13,6 +13,8 @@ RUN apk update && apk add unzip && \
 
 FROM ${BASE_IMAGE} AS final
 
+WORKDIR /data
+
 ARG HYTALE_DOWNLOADER_PLATFORM="linux-amd64"
 ARG IMAGE_VERSION
 
