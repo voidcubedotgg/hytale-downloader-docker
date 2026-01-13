@@ -19,6 +19,7 @@ ARG HYTALE_DOWNLOADER_PLATFORM="linux-amd64"
 ARG IMAGE_VERSION
 
 COPY --from=downloader /tmp/hytale-downloader-${HYTALE_DOWNLOADER_PLATFORM} /bin/hytale-downloader
+COPY --from=downloader /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
 
 ENTRYPOINT [ "/bin/hytale-downloader" ]
 
